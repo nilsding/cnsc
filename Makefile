@@ -6,6 +6,7 @@ SRCS = types.c \
 TARGET = cnsc
 CFLAGS = -Wall -O3
 LDFLAGS =
+PREFIX = /usr/local
 
 OBJ = $(SRCS:.c=.o)
 
@@ -20,4 +21,7 @@ $(TARGET): $(OBJ)
 clean:
 	rm -f $(TARGET) $(OBJ)
 
-.PHONY: all clean
+install: $(TARGET)
+	install $< $(PREFIX)/bin
+
+.PHONY: all clean install
