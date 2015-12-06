@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <signal.h>
 #include "cnsc.h"
 #include "log.h"
 #include "git.h"
@@ -10,8 +11,17 @@ int COMMIT_MESSAGE_FROM_ARGS = 0;
 int VERBOSE = 0;
 
 static void
-usage() {
+usage()
+{
     log_errlogf(0, "usage: cnsc [-ahmv]\n");
+}
+
+static void
+int_handler(int sig)
+{
+    menu_reset_console();
+    log_errlogf(0, "Interrupt\n");
+    exit(1);
 }
 
 //!
@@ -23,6 +33,8 @@ main(int argc, char **argv)
 {
     int ch, retval = 0;
     char *commit_message = NULL;
+
+    signal(SIGINT, int_handler);
 
     // read command line arguments
     while ((ch = getopt(argc, argv, "ahm:v")) != -1) {

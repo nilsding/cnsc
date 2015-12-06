@@ -29,4 +29,10 @@ struct type_t *menu_ask_type(const char *question,
 //!
 char *menu_ask_string(const char *question);
 
+//!
+//! \brief menu_reset_console can be called by cleanup functions.  It restores
+//!     the termios set by other internal functions.
+//!
+void menu_reset_console(void);
+
 #endif // MENU_H

@@ -192,3 +192,10 @@ menu_ask_string(const char *question)
 
     return str;
 }
+
+void
+menu_reset_console(void)
+{
+    menu_clear_to_end_of_screen();
+    menu_set_buffered_input(1);
+}
