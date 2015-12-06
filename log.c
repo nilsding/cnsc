@@ -1,3 +1,4 @@
+/* -*- C -*- */
 #include "log.h"
 
 static int

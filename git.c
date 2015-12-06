@@ -1,3 +1,4 @@
+/* -*- C -*- */
 #include "git.h"
 #include "log.h"
 

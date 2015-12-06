@@ -1,3 +1,4 @@
+/* -*- C -*- */
 #include <stdlib.h>
 #include "cnsc.h"
 

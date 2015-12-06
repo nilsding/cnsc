@@ -1,3 +1,4 @@
+/* -*- C -*- */
 #include "menu.h"
 #include "log.h"
 

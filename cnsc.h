@@ -1,3 +1,4 @@
+/* -*- C -*- */
 #ifndef CNSC_H
 #define CNSC_H
 
