@@ -2,4 +2,6 @@
 *.autosave
 *.swp
 build/
+*.o
+cnsc
 

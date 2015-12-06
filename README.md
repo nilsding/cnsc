@@ -8,11 +8,7 @@ runtime dependencies, and works only on Unix-like systems.
 
 ## Building
 
-Building cnsc requires CMake.
-
-    $ mkdir build && cd build
-    $ cmake ..
-    $ sudo cp cnsc /usr/local/bin
+Just run `make`.
 
 ## Running
 
