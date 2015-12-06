@@ -1,0 +1,9 @@
+{
+  "name": "cnsc",
+  "version": "0.1.0",
+  "repo": "nilsding/cnsc",
+  "description": "C No Scope Commits",
+  "keywords": ["git", "commit", "development", "angular", "retrospring"],
+  "license": "MIT",
+  "install": "make install"
+}
