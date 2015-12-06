@@ -69,13 +69,13 @@ main(int argc, char **argv)
 
     if (!git_check()) {
         log_errlogf(0, "Could not find git in $PATH.\n"
-                       "Please install git using a package manager of your"
+                       "Please install git using a package manager of your "
                        "choice.\n");
         return 2;
     }
 
     if (!git_is_repo()) {
-        log_errlogf(0, "The current directory is not a valid git"
+        log_errlogf(0, "The current directory is not a valid git "
                        "repository.\n");
         return 2;
     }
