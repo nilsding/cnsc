@@ -2,6 +2,7 @@
 #ifndef MENU_H
 #define MENU_H
 
+#define _WITH_GETLINE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
