@@ -1,6 +1,6 @@
 {
   "name": "cnsc",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repo": "nilsding/cnsc",
   "description": "C No Scope Commits",
   "keywords": ["git", "commit", "development", "angular", "retrospring"],
