@@ -2,6 +2,16 @@
 #include "menu.h"
 #include "log.h"
 
+static size_t menu_types_array_size(const struct type_t types[]);
+static char *menu_render_list_item(const struct type_t *type, int selected);
+static void menu_render_types(const struct type_t types[], size_t types_size, int selected);
+static void menu_cursor_show(void);
+static void menu_cursor_hide(void);
+static void menu_cursor_move_up(unsigned int lines);
+static void menu_clear_to_end_of_screen(void);
+static void menu_set_buffered_input(int buffered);
+static int menu_read_input(int *selected, int *return_pressed);
+
 static size_t
 menu_types_array_size(const struct type_t types[])
 {
@@ -48,9 +58,16 @@ menu_render_types(const struct type_t types[], size_t types_size, int selected)
 {
     int i;
     char *str = NULL;
+    struct winsize w;
+    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
 
     for (i = 0; i < types_size; i++) {
         str = menu_render_list_item(types + i, i == selected);
+        // XXX: make strlen ignore ANSI escape sequences
+        if (strlen(str) > w.ws_col) {
+            strcpy(str + w.ws_col - 4, "...");
+            menu_clear_to_end_of_screen();
+        }
         puts(str);
         free(str);
     }
